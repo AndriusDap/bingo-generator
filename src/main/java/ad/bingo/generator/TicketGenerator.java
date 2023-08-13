@@ -44,8 +44,6 @@ public class TicketGenerator {
      * Populate columns with numbers in the designated locations - {@link #fillColumn(Random, int, ArrayList, TicketStrip)}
      */
     public TicketStrip ticketStrip(Random random) {
-
-
         var template = MatrixFiller.produce(
                 random,
                 Config.NumbersPerStripColumn,

@@ -17,12 +17,15 @@ class TicketGeneratorTest {
 
     public static final int ITERATIONS_TO_RUN = 100;
 
+    /*
+        Mocking the randomness would be pretty complicated, so instead of worrying about the total correctness of unit tests
+        Let's just make sure everything works and treat this as "integration" test.
+     */
     static Stream<TicketStrip> ticketStrips() {
         Random random = new Random();
         TicketGenerator generator = new TicketGenerator();
         return Stream.generate(() -> generator.ticketStrip(random)).limit(ITERATIONS_TO_RUN);
     }
-
 
     @ParameterizedTest
     @MethodSource("ticketStrips")

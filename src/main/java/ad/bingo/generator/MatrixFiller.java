@@ -8,7 +8,6 @@ import java.util.stream.IntStream;
 
 public class MatrixFiller {
 
-
     /**
      * Wrapper for {@link #produceOpt(Random, int[], int[], int, int)}. Will recursively attempt to create a matrix,
      * this may lead to a stack overflow if we're unlucky or configuration is too complicated.
@@ -89,13 +88,10 @@ public class MatrixFiller {
                 // We need to discard all the potential positions that are no longer valid
                 potentialPositions.removeIf(p -> p.column == toUpdate.column() || p.row == toUpdate.row());
             }
-
-
         } while (totalSum != requiredSum);
 
         return Optional.of(output);
     }
-
 
     private record Pair(int row, int column) {
     }
